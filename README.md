@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Client Feedback App
 
-## Getting Started
+Share a link to a live website, let your client pin comments on the running page, and manage every comment from your dashboard.
 
-First, run the development server:
+Stack and architecture: [spec 0001](docs/specs/0001-stack-architecture/index.md). Scope: [docs/scope/scope.md](docs/scope/scope.md).
+
+## Run it locally
+
+You need Node.js 24 (see `.nvmrc`) and pnpm. If `pnpm` isn't on your PATH, run `corepack enable` once.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
+cp .env.example .env.local   # fill in real values, or: vercel env pull .env.local
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- App origin: <http://localhost:3000>
+- Viewer origin: <http://127.0.0.1:3000> (a separate origin on purpose; see the origin model in spec 0001)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The app checks its environment at startup and stops with a clear message if a value is missing or malformed.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Scripts
 
-## Learn More
+| Script | What it does |
+| --- | --- |
+| `pnpm dev` | Builds the overlay, then starts the Next.js dev server |
+| `pnpm build` | Builds the overlay (`public/overlay/overlay.js`), then the Next.js app |
+| `pnpm build:overlay` | Builds only the overlay bundle with Vite |
+| `pnpm typecheck` | Generates route types, then runs `tsc` |
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+CI builds without secrets by setting `SKIP_ENV_VALIDATION=1`.

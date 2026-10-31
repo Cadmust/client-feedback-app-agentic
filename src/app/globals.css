@@ -1,26 +1,136 @@
 @import "tailwindcss";
 
+/*
+ * Design tokens. Provisional values taken from the landing page reference
+ * (spec 0002) until feature 5 ratifies the design system. design.md holds
+ * the art direction; the values live here only.
+ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  --canvas: #fdf8f1;
+  --canvas-pattern: #f3e6d3;
+  --surface: #ffffff;
+  --surface-muted: #f7f3ee;
+  --ink: #1a1714;
+  --body: #5c5751;
+  --muted: #6b655e;
+  --border: #ece4d9;
+  --border-strong: #948b80;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --accent: #c94a0a;
+  --accent-pressed: #a93d08;
+  --accent-contrast: #ffffff;
+  --accent-ink: #c2410c;
+  --accent-bright: #f26b1d;
+  --accent-soft: #ffedd5;
+
+  --info: #3346b8;
+  --info-contrast: #ffffff;
+
+  --success: #15803d;
+  --success-soft: #dcfce7;
+
+  --card-yellow: #fde9a8;
+  --card-blue: #dcebfb;
+  --card-mint: #d4f1e2;
+  --card-lavender: #e7e1fc;
+  --card-cream: #fef1c3;
+
+  --shadow-card: 0 1px 2px rgb(26 23 20 / 0.04), 0 8px 24px rgb(26 23 20 / 0.06);
+  --shadow-float: 0 2px 4px rgb(26 23 20 / 0.06), 0 12px 32px rgb(26 23 20 / 0.1);
+
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --canvas: #161311;
+    --canvas-pattern: #2a231d;
+    --surface: #221d19;
+    --surface-muted: #2b2520;
+    --ink: #f5efe8;
+    --body: #c9c0b6;
+    --muted: #a8a29e;
+    --border: #3a322b;
+    --border-strong: #7a6f65;
+
+    --accent: #fb923c;
+    --accent-pressed: #fdba74;
+    --accent-contrast: #1a1714;
+    --accent-ink: #fdba74;
+    --accent-bright: #fb923c;
+    --accent-soft: #3b2314;
+
+    --info: #a5b4fc;
+    --info-contrast: #161311;
+
+    --success: #4ade80;
+    --success-soft: #14301f;
+
+    --card-yellow: #3a3016;
+    --card-blue: #1c2a3a;
+    --card-mint: #18322a;
+    --card-lavender: #2a2440;
+    --card-cream: #352b12;
+
+    --shadow-card: 0 1px 2px rgb(0 0 0 / 0.3), 0 8px 24px rgb(0 0 0 / 0.25);
+    --shadow-float: 0 2px 4px rgb(0 0 0 / 0.35), 0 12px 32px rgb(0 0 0 / 0.35);
   }
 }
 
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-canvas-pattern: var(--canvas-pattern);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-ink: var(--ink);
+  --color-body: var(--body);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-accent: var(--accent);
+  --color-accent-pressed: var(--accent-pressed);
+  --color-accent-contrast: var(--accent-contrast);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-bright: var(--accent-bright);
+  --color-accent-soft: var(--accent-soft);
+  --color-info: var(--info);
+  --color-info-contrast: var(--info-contrast);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-card-yellow: var(--card-yellow);
+  --color-card-blue: var(--card-blue);
+  --color-card-mint: var(--card-mint);
+  --color-card-lavender: var(--card-lavender);
+  --color-card-cream: var(--card-cream);
+
+  --shadow-card: var(--shadow-card);
+  --shadow-float: var(--shadow-float);
+  --ease-standard: var(--ease-standard);
+
+  --font-sans: var(--font-jakarta);
+
+  /* Small sizes for the illustrated product mockups only. */
+  --text-micro: 0.625rem;
+  --text-micro--line-height: 0.875rem;
+  --text-mini: 0.6875rem;
+  --text-mini--line-height: 1rem;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--canvas);
+  color: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
 }
