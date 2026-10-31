@@ -12,7 +12,7 @@ _These are recommendations to keep your build orderly, not requirements. Skip an
 | # | Feature | Phase | Status |
 |---|---------|-------|--------|
 | 1 | Stack & architecture | Foundation | in-progress |
-| 2 | Coding standards & tooling | Foundation | in-progress |
+| 2 | Coding standards & tooling | Foundation | done |
 | 3 | Live preview & pin anchoring | Foundation | planned |
 | 4 | Data model | Foundation | planned |
 | 5 | Design system & UI foundation | Foundation | planned |
@@ -37,7 +37,7 @@ spec [0001](../specs/0001-stack-architecture/index.md) · code in `src/`, `overl
 - [ ] Verify it: `/check verify stack & architecture`
 - [ ] Test it: `/test stack & architecture`
 
-### 2. Coding standards & tooling · in-progress
+### 2. Coding standards & tooling · done
 Capture conventions from the real scaffolded project, then install lint, format, and pre commit checks.
 **Done when:** root `AGENTS.md` reflects the real stack, and lint, format, and pre commit hooks all run clean.
 code in `eslint.config.mjs`, `.prettierrc.json`, `.husky/`, `.github/workflows/ci.yml`
