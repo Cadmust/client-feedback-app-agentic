@@ -16,41 +16,63 @@ const colors = {
 
 export function renderSocialCard() {
   return new ImageResponse(
-    (
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        padding: 80,
+        background: colors.canvas,
+        color: colors.ink,
+      }}
+    >
       <div
         style={{
-          width: "100%",
-          height: "100%",
           display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          padding: 80,
-          background: colors.canvas,
-          color: colors.ink,
+          alignItems: "center",
+          gap: 16,
+          fontSize: 36,
+          fontWeight: 700,
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 16, fontSize: 36, fontWeight: 700 }}>
-          <div
-            style={{
-              width: 44,
-              height: 44,
-              borderRadius: 12,
-              border: `6px solid ${colors.accentBright}`,
-            }}
-          />
-          {siteName}
-        </div>
-        <div style={{ marginTop: 48, fontSize: 28, fontWeight: 600, color: colors.accentInk }}>
-          Collect feedback on live pages
-        </div>
-        <div style={{ marginTop: 16, fontSize: 72, fontWeight: 800, lineHeight: 1.1, maxWidth: 960 }}>
-          One link is all it takes to get clear feedback.
-        </div>
-        <div style={{ marginTop: 28, fontSize: 30, color: colors.body }}>
-          Share your page. Clients pin comments. You resolve everything in one inbox.
-        </div>
+        <div
+          style={{
+            width: 44,
+            height: 44,
+            borderRadius: 12,
+            border: `6px solid ${colors.accentBright}`,
+          }}
+        />
+        {siteName}
       </div>
-    ),
+      <div
+        style={{
+          marginTop: 48,
+          fontSize: 28,
+          fontWeight: 600,
+          color: colors.accentInk,
+        }}
+      >
+        Collect feedback on live pages
+      </div>
+      <div
+        style={{
+          marginTop: 16,
+          fontSize: 72,
+          fontWeight: 800,
+          lineHeight: 1.1,
+          maxWidth: 960,
+        }}
+      >
+        One link is all it takes to get clear feedback.
+      </div>
+      <div style={{ marginTop: 28, fontSize: 30, color: colors.body }}>
+        Share your page. Clients pin comments. You resolve everything in one
+        inbox.
+      </div>
+    </div>,
     socialCardSize,
   );
 }

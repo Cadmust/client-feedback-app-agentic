@@ -79,7 +79,12 @@ function NoLoginCard() {
       className="lg:flex-1"
     >
       <div className="relative mt-2 ml-8 rounded-2xl bg-surface p-4 pl-10 shadow-card">
-        <Avatar initials="AT" tone="orange" size="lg" className="absolute top-3 -left-7" />
+        <Avatar
+          initials="AT"
+          tone="orange"
+          size="lg"
+          className="absolute top-3 -left-7"
+        />
         <p className="text-xs font-semibold text-ink">Your Name</p>
         <p className="mt-1.5 rounded-lg border border-border px-3 py-1.5 text-xs text-ink">
           Alex Taylor
@@ -156,10 +161,28 @@ function ReviewLiveCard() {
               </div>
               <div className="relative flex h-24 w-24 items-end justify-center rounded-xl bg-card-cream sm:w-28">
                 <svg className="h-20 w-14" viewBox="0 0 56 80" fill="none">
-                  <path d="M28 52C14 40 10 22 20 8c4 14 8 26 8 44Z" className="fill-success" />
-                  <path d="M28 52c14-12 18-30 8-44-4 14-8 26-8 44Z" className="fill-success" opacity="0.75" />
-                  <path d="M28 54C18 46 4 44 2 30c12 2 22 10 26 24Z" className="fill-success" opacity="0.6" />
-                  <rect x="16" y="54" width="24" height="22" rx="4" className="fill-surface" />
+                  <path
+                    d="M28 52C14 40 10 22 20 8c4 14 8 26 8 44Z"
+                    className="fill-success"
+                  />
+                  <path
+                    d="M28 52c14-12 18-30 8-44-4 14-8 26-8 44Z"
+                    className="fill-success"
+                    opacity="0.75"
+                  />
+                  <path
+                    d="M28 54C18 46 4 44 2 30c12 2 22 10 26 24Z"
+                    className="fill-success"
+                    opacity="0.6"
+                  />
+                  <rect
+                    x="16"
+                    y="54"
+                    width="24"
+                    height="22"
+                    rx="4"
+                    className="fill-surface"
+                  />
                 </svg>
                 <Pin n={1} className="top-1/3 -left-3" />
               </div>
@@ -199,9 +222,33 @@ function ReviewLiveCard() {
 
 function OpenInboxCard() {
   const items = [
-    { initials: "MR", tone: "orange" as const, title: "Homepage hero", preview: "Looks great! Can we...", time: "8m", unread: true, resolved: false },
-    { initials: "SL", tone: "lavender" as const, title: "Pricing section", preview: "Could you clarify this line?", time: "24m", unread: true, resolved: false },
-    { initials: "JK", tone: "blue" as const, title: "Footer links", preview: "Let's update the link text.", time: "1h", unread: false, resolved: true },
+    {
+      initials: "MR",
+      tone: "orange" as const,
+      title: "Homepage hero",
+      preview: "Looks great! Can we...",
+      time: "8m",
+      unread: true,
+      resolved: false,
+    },
+    {
+      initials: "SL",
+      tone: "lavender" as const,
+      title: "Pricing section",
+      preview: "Could you clarify this line?",
+      time: "24m",
+      unread: true,
+      resolved: false,
+    },
+    {
+      initials: "JK",
+      tone: "blue" as const,
+      title: "Footer links",
+      preview: "Let's update the link text.",
+      time: "1h",
+      unread: false,
+      resolved: true,
+    },
   ];
 
   return (
@@ -216,11 +263,15 @@ function OpenInboxCard() {
         <div className="flex items-center gap-3 border-b border-border pb-2 text-xs text-body">
           <span className="flex items-center gap-1.5 border-b-2 border-accent-bright pb-1 font-semibold text-ink">
             All
-            <span className="rounded-full bg-accent px-1.5 text-micro font-bold text-accent-contrast">5</span>
+            <span className="rounded-full bg-accent px-1.5 text-micro font-bold text-accent-contrast">
+              5
+            </span>
           </span>
           <span className="flex items-center gap-1.5 pb-1">
             Unread
-            <span className="rounded-full bg-surface-muted px-1.5 text-micro font-semibold">2</span>
+            <span className="rounded-full bg-surface-muted px-1.5 text-micro font-semibold">
+              2
+            </span>
           </span>
           <span className="pb-1">Resolved</span>
           <MoreVertical className="ml-auto size-4 text-muted" />
@@ -233,7 +284,9 @@ function OpenInboxCard() {
               />
               <Avatar initials={item.initials} tone={item.tone} size="sm" />
               <div className="min-w-0 flex-1">
-                <p className="truncate text-mini font-semibold text-ink">{item.title}</p>
+                <p className="truncate text-mini font-semibold text-ink">
+                  {item.title}
+                </p>
                 <p className="truncate text-micro text-body">{item.preview}</p>
               </div>
               <div className="flex flex-col items-end gap-1">
@@ -266,13 +319,19 @@ function ResolveFasterCard() {
       className="lg:flex-1"
     >
       <div className="flex flex-wrap items-center gap-1.5 text-xs font-semibold">
-        <span className="rounded-lg bg-accent-soft px-2.5 py-1.5 text-accent-ink">Open</span>
+        <span className="rounded-lg bg-accent-soft px-2.5 py-1.5 text-accent-ink">
+          Open
+        </span>
         <ChevronRight className="size-4 text-muted" />
-        <span className="rounded-lg bg-surface px-2.5 py-1.5 text-ink shadow-card">In review</span>
+        <span className="rounded-lg bg-surface px-2.5 py-1.5 text-ink shadow-card">
+          In review
+        </span>
         <ChevronRight className="size-4 text-muted" />
         <span className="flex items-center gap-1.5 rounded-lg bg-success-soft px-2.5 py-1.5 text-success">
           Resolved
-          <span className="rounded-md bg-surface px-1.5 text-micro text-ink">12</span>
+          <span className="rounded-md bg-surface px-1.5 text-micro text-ink">
+            12
+          </span>
         </span>
       </div>
       <div className="mt-4 flex flex-1 items-center justify-center">
@@ -285,7 +344,8 @@ function ResolveFasterCard() {
   );
 }
 
-const sideColumn = "flex flex-col gap-4 md:grid md:grid-cols-2 lg:flex lg:flex-col";
+const sideColumn =
+  "flex flex-col gap-4 md:grid md:grid-cols-2 lg:flex lg:flex-col";
 
 export function HowItWorks() {
   return (

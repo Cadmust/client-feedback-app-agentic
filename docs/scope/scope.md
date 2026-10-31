@@ -12,7 +12,7 @@ _These are recommendations to keep your build orderly, not requirements. Skip an
 | # | Feature | Phase | Status |
 |---|---------|-------|--------|
 | 1 | Stack & architecture | Foundation | in-progress |
-| 2 | Coding standards & tooling | Foundation | planned |
+| 2 | Coding standards & tooling | Foundation | in-progress |
 | 3 | Live preview & pin anchoring | Foundation | planned |
 | 4 | Data model | Foundation | planned |
 | 5 | Design system & UI foundation | Foundation | planned |
@@ -37,10 +37,12 @@ spec [0001](../specs/0001-stack-architecture/index.md) · code in `src/`, `overl
 - [ ] Verify it: `/check verify stack & architecture`
 - [ ] Test it: `/test stack & architecture`
 
-### 2. Coding standards & tooling
+### 2. Coding standards & tooling · in-progress
 Capture conventions from the real scaffolded project, then install lint, format, and pre commit checks.
 **Done when:** root `AGENTS.md` reflects the real stack, and lint, format, and pre commit hooks all run clean.
-- [ ] Capture conventions and tooling choices: `/audit`
+code in `eslint.config.mjs`, `.prettierrc.json`, `.husky/`, `.github/workflows/ci.yml`
+- [x] Capture conventions and tooling choices: `/audit`
+- [x] Install the tooling: `/develop tooling`
 
 ### 3. Live preview & pin anchoring · needs a decision · Beta
 This is the hardest and riskiest piece: rendering the client's live site inside the app with a comment overlay on top, and anchoring each pin to the page so it stays in place after scrolling, resizing, or small layout changes.

@@ -1,4 +1,8 @@
-import { renderSocialCard, socialCardAlt, socialCardSize } from "@/lib/social-card";
+import {
+  renderSocialCard,
+  socialCardAlt,
+  socialCardSize,
+} from "@/lib/social-card";
 
 export const alt = socialCardAlt;
 export const size = socialCardSize;

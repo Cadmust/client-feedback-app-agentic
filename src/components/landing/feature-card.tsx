@@ -35,7 +35,11 @@ export function FeatureCard({
     >
       <h3 className="flex items-center gap-3 text-base font-bold text-ink">
         <span className="inline-flex size-9 items-center justify-center rounded-full bg-surface shadow-card">
-          <Icon aria-hidden="true" className="size-4 text-ink" strokeWidth={2.25} />
+          <Icon
+            aria-hidden="true"
+            className="size-4 text-ink"
+            strokeWidth={2.25}
+          />
         </span>
         {title}
       </h3>

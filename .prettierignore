@@ -1,0 +1,14 @@
+.next/
+out/
+build/
+coverage/
+public/overlay/
+next-env.d.ts
+pnpm-lock.yaml
+skills-lock.json
+.agents/
+.claude/
+
+# Workflow docs, edited line by line by the skills
+docs/
+design.md

@@ -21,11 +21,13 @@ The app checks its environment at startup and stops with a clear message if a va
 
 ## Scripts
 
-| Script | What it does |
-| --- | --- |
-| `pnpm dev` | Builds the overlay, then starts the Next.js dev server |
-| `pnpm build` | Builds the overlay (`public/overlay/overlay.js`), then the Next.js app |
-| `pnpm build:overlay` | Builds only the overlay bundle with Vite |
-| `pnpm typecheck` | Generates route types, then runs `tsc` |
+| Script               | What it does                                                           |
+| -------------------- | ---------------------------------------------------------------------- |
+| `pnpm dev`           | Builds the overlay, then starts the Next.js dev server                 |
+| `pnpm build`         | Builds the overlay (`public/overlay/overlay.js`), then the Next.js app |
+| `pnpm build:overlay` | Builds only the overlay bundle with Vite                               |
+| `pnpm typecheck`     | Generates route types, then runs `tsc`                                 |
+| `pnpm lint`          | Runs ESLint (`pnpm lint:fix` to fix what it can)                       |
+| `pnpm format`        | Formats with Prettier (`pnpm format:check` only checks)                |
 
-CI builds without secrets by setting `SKIP_ENV_VALIDATION=1`.
+A pre-commit hook (husky + lint-staged) lints and formats staged files, then runs `pnpm typecheck`. CI on GitHub Actions runs lint, format check, typecheck, tests, and build, without secrets, by setting `SKIP_ENV_VALIDATION=1`.
